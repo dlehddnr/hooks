@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { useInput } from "./useInput";
 
 const App = () => {
-  const [item, setItem] = useState(1);
-  const incrementItem = () => setItem(item + 1);
-  const decrementItem = () => setItem(item - 1);
+  const maxLen = value => value.length <= 10 && !value.includes("@");
+  const name = useInput("Mr.", maxLen);
   return (
     <div className="App">
       <h1>Hello Hooks</h1>
-      <span>{item}</span>
-      <button onClick={incrementItem}>Increment</button>
-      <button onClick={decrementItem}>Decrement</button>
+      <input placeholder="Name" {...name} />
     </div>
   );
 };
