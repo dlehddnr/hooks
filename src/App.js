@@ -1,12 +1,14 @@
 import React from "react";
-import { useBeforeLeave } from "./useBeforeLeave";
+import { useNetwork } from "./useNetwork";
 
 const App = () => {
-  const begging = () => console.log("noooooooooooo");
-  useBeforeLeave(begging);
+  const handleNetworkChange = online => {
+    console.log(online ? "It's OnLine" : "No Internet connection");
+  };
+  const onLine = useNetwork(handleNetworkChange);
   return (
     <div className="App">
-      <h1>hi</h1>
+      <h1>{onLine ? "onLine" : "offLine"}</h1>
     </div>
   );
 };
