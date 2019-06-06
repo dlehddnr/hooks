@@ -1,14 +1,12 @@
 import React from "react";
-import { useClick } from "./useClick";
+import { useBeforeLeave } from "./useBeforeLeave";
 
 const App = () => {
-  const Hi = () => {
-    console.log("hi");
-  };
-  const boom = useClick(Hi);
+  const begging = () => console.log("noooooooooooo");
+  useBeforeLeave(begging);
   return (
     <div className="App">
-      <h1 ref={boom}>Hello Hooks</h1>
+      <h1>hi</h1>
     </div>
   );
 };
