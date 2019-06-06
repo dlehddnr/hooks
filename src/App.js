@@ -1,14 +1,11 @@
 import React from "react";
-import { useNetwork } from "./useNetwork";
+import { useNotification } from "./useNotification";
 
 const App = () => {
-  const handleNetworkChange = online => {
-    console.log(online ? "It's OnLine" : "No Internet connection");
-  };
-  const onLine = useNetwork(handleNetworkChange);
+  const fireNotif = useNotification("Hello man", { body: "hi dude" });
   return (
     <div className="App">
-      <h1>{onLine ? "onLine" : "offLine"}</h1>
+      <button onClick={fireNotif}>Hello</button>
     </div>
   );
 };
